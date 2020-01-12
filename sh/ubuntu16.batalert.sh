@@ -7,12 +7,12 @@ load_notifier()
 	battery=${per:25:2}
 	state=${cur:25:${#cur}}
 	if [ "$percentage" == "100%" -a "$state" == "charging" ]; then
-		notify-send -i /home/soumik/Documents/Projects/BatAlert/full.png "Charge completed"
+		notify-send -i ../static/full.png "Charge completed"
 		return 1
 	fi
 
 	if [ $battery -le 40 -a "$state" == "discharging" ]; then
-	    notify-send -i /home/soumik/Documents/Projects/BatAlert/low.png "Alert : Please charge the battery"
+	    notify-send -i ../static/low.png "Alert : Please charge the battery"
 	    return 1
 	fi
 	
